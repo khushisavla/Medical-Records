@@ -1,3 +1,6 @@
+/*
+Author: Khushi Savla
+*/
 #include<iostream>
 #include<cstdlib>
 #include<cmath>
@@ -157,7 +160,7 @@ class person
 			
 		}		
 };
-//used strcuty excerise I did for syntax
+//completed an excerise on  strcuty.com and applied it for syntax in this program
 class Node {
   public:
     person value;
@@ -303,51 +306,51 @@ int main()
 				bool allowed = exist.allow(password_enter);
 				if(allowed)
 				{
-				cout<<"which action would you like to proceed with: "<< endl;
-				string action_exist;
-				cin >> action_exist;
-				cout<<endl;
+					cout<<"which action would you like to proceed with: "<< endl;
+					string action_exist;
+					cin >> action_exist;
+					cout<<endl;
 				
-				if(action_exist == "change_password")
-				{
-					exist.change_password();
-				}
-				else if(action_exist == "add_record")
-				{
-					string condition1, treatment, medication;
-					int severity;
-					cout<<endl<<"please enter condition: ";
-					cin >> condition1;
-					cout<<"please enter severity: ";
-					cin >> severity;
-					cout<<"please enter treatment: ";
-					cin >> treatment;
-					cout<<"please enter prescribed medication: ";
-					cin >> medication;
-					exist.add_record(condition1, severity, treatment, medication);
-				}
-				else if(action_exist == "print_records")
-				{
-					ofstream fout("report.txt");
-					exist.output(fout);
-					fout.close();
-				}
-				else if(action_exist == "add_doctor")
-				{
-					cout<< "please enter doctor name: ";
-					string doctor;
-					cin >> doctor;
-					exist.add_doctor(doctor);
+					if(action_exist == "change_password")
+					{
+						exist.change_password();
+					}
+					else if(action_exist == "add_record")
+					{
+						string condition1, treatment, medication;
+						int severity;
+						cout<<endl<<"please enter condition: ";
+						cin >> condition1;
+						cout<<"please enter severity: ";
+						cin >> severity;
+						cout<<"please enter treatment: ";
+						cin >> treatment;
+						cout<<"please enter prescribed medication: ";
+						cin >> medication;
+						exist.add_record(condition1, severity, treatment, medication);
+					}
+					else if(action_exist == "print_records")
+					{
+						ofstream fout("report.txt");
+						exist.output(fout);
+						fout.close();
+					}
+					else if(action_exist == "add_doctor")
+					{
+						cout<< "please enter doctor name: ";
+						string doctor;
+						cin >> doctor;
+						exist.add_doctor(doctor);
+					}
+					else
+					{
+						cout<< "action does not exist" << endl << "please try again"<<endl;
+					}
 				}
 				else
 				{
-					cout<< "action does not exist" << endl << "please try again"<<endl;
+					cout<<"incorrect password";
 				}
-			}
-			else
-		{
-			cout<<"incorrect password";
-		}
 			}
 			else
 			{
